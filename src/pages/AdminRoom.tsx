@@ -2,14 +2,13 @@ import { useHistory, useParams } from 'react-router-dom'
 import { Button } from '../components/Button'
 import { Question } from '../components/Question'
 import { RoomCode } from '../components/RoomCode'
+import { useRoom } from '../hooks/useRoom'
+import { database } from '../services/firebase'
 
-// import { useAuth } from '../hooks/useAuth'
 import logoImg from '../assets/images/logo.svg'
 import deleteImg from '../assets/images/delete.svg'
 
 import '../styles/room.scss'
-import { useRoom } from '../hooks/useRoom'
-import { database } from '../services/firebase'
 
 type RoomParams = {
   id: string;
@@ -44,15 +43,15 @@ export const AdminRoom = () => {
           <img src={logoImg} alt="Let me ask" />
           <div>
             <RoomCode code={roomId} />
-            <Button isOutlined onClick={handleEndRoom}>Encerrar Sala</Button>
+            <Button isOutlined onClick={handleEndRoom}>Close Room</Button>
           </div>
         </div>
       </header>
 
       <main>
         <div className="room-title">
-          <h1>Sala {title}</h1>
-          {questions.length > 0 && <span>{questions.length} pergunta(s)</span>}
+          <h1>Room {title}</h1>
+          {questions.length > 0 && <span>{questions.length} question(s)</span>}
         </div>
         <div className="question-list">
           {questions.map(question => {
@@ -66,7 +65,7 @@ export const AdminRoom = () => {
                   type='button'
                   onClick={() => handleDeleteQuestion(question.id)}
                 >
-                  <img src={deleteImg} alt='Remover pergunta' />
+                  <img src={deleteImg} alt='Delete question' />
                 </button>
               </Question>
             )

@@ -31,27 +31,27 @@ export const NewRoom = () => {
   return (
     <div id="page-auth">
       <aside>
-        <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo real</p>
+        <img src={illustrationImg} alt="Illustration symboling questions and answers" />
+        <strong>Create live Q&amp;A rooms</strong>
+        <p>Answer question from your audience in real time</p>
       </aside>
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Let me ask" />
           <h1>{user?.name}</h1>
-          <h2>Criar uma nova sala</h2>
+          <h2>Create a new room</h2>
           <form onSubmit={handleCreateRoom}>
             <input
               type="text"
-              placeholder='Nome da sala'
+              placeholder="Room's name"
               onChange={event => setNewRoom(event.target.value)}
               value={newRoom}
             />
             <Button type="submit">
-              Criar sala
+              Create room
             </Button>
           </form>
-          <p>Quer entrar em uma sala existente? <Link to='/'>Clique aqui</Link></p>
+          <p>Wanna enter a existing room? <Link to='/'>Click here</Link></p>
         </div>
       </main>
     </div>

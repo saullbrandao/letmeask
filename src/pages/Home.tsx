@@ -1,14 +1,14 @@
 import { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { useAuth } from '../hooks/useAuth'
 import { Button } from '../components/Button'
+import { useAuth } from '../hooks/useAuth'
+import { database } from '../services/firebase'
 
 import illustrationImg from '../assets/images/illustration.svg'
 import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 
 import '../styles/auth.scss'
-import { database } from '../services/firebase'
 
 
 export const Home = () => {
@@ -48,25 +48,25 @@ export const Home = () => {
     <div id="page-auth">
       <aside>
         <img src={illustrationImg} alt="Ilustração simbolizando perguntas e respostas" />
-        <strong>Crie salas de Q&amp;A ao-vivo</strong>
-        <p>Tire as dúvidas da sua audiência em tempo real</p>
+        <strong>Create live Q&amp;A rooms</strong>
+        <p>Answer question from your audience in real time</p>
       </aside>
       <main>
         <div className="main-content">
           <img src={logoImg} alt="Let me ask" />
           <button onClick={handleCreateRoom} className='create-room'>
             <img src={googleIconImg} alt="Logo do google" />
-            Crie sua sala com o Google
+            Create a room with Google
           </button>
-          <div className="separator">ou entre em uma sala</div>
+          <div className="separator">or join a room</div>
           <form onSubmit={handleJoinRoom}>
             <input
               type="text"
-              placeholder='Digite o código da sala'
+              placeholder="Type the room's code"
               onChange={event => setRoomCode(event.target.value)}
             />
             <Button type="submit">
-              Entrar na sala
+              Enter room
             </Button>
           </form>
         </div>
