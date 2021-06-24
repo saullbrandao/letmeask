@@ -22,7 +22,12 @@ export const AdminRoom = () => {
 
   const { questions, title } = useRoom(roomId)
 
-
+  async function handleDeleteQuestion(questionId: string) {
+    // TODO: create a modal
+    if (window.confirm('Tem certeza que deseja excluir esta pergunta?')) {
+      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove()
+    }
+  }
 
   return (
     <div id='page-room'>
@@ -49,7 +54,12 @@ export const AdminRoom = () => {
                 author={question.author}
                 key={question.id}
               >
-
+                <button
+                  type='button'
+                  onClick={() => handleDeleteQuestion(question.id)}
+                >
+                  <img src={deleteImg} alt='Remover pergunta' />
+                </button>
               </Question>
             )
           })}
