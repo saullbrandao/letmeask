@@ -1,5 +1,4 @@
 import { ReactNode } from 'react'
-import '../styles/question.scss'
 
 type QuestionProps = {
   content: string;
@@ -20,14 +19,20 @@ export function Question({
   children,
 }: QuestionProps) {
   return (
-    <div className={`question ${isAnswered ? 'answered' : ''} ${(isHighlighted && !isAnswered) ? 'highlighted' : ''}`}>
-      <p>{content}</p>
-      <footer>
-        <div className="user-info">
-          <img src={author.avatar} alt={author.name} />
-          <span>{author.name}</span>
+    <div className={`bg-white rounded-lg shadow p-6 ${isAnswered ? 'bg-gray-light' : ''} ${(isHighlighted && !isAnswered) ? 'border border-purple bg-white-details' : ''}`}>
+      <p className='text-black'>{content}</p>
+      <footer className='flex justify-between items-center mt-6'>
+        <div className="flex items-center">
+          <img
+            src={author.avatar}
+            alt={author.name}
+            className='h-8 rounded-full '
+          />
+          <span className={`ml-2 text-gray-dark text-sm ${isHighlighted ? 'text-black' : ''} `}>
+            {author.name}
+          </span>
         </div>
-        <div>
+        <div className='flex gap-4' >
           {children}
         </div>
       </footer>

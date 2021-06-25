@@ -10,8 +10,6 @@ import checkImg from '../assets/images/check.svg'
 import deleteImg from '../assets/images/delete.svg'
 import answerImg from '../assets/images/answer.svg'
 
-import '../styles/room.scss'
-
 type RoomParams = {
   id: string;
 }
@@ -51,23 +49,30 @@ export const AdminRoom = () => {
   }
 
   return (
-    <div id='page-room'>
-      <header>
-        <div className="content">
-          <img src={logoImg} alt="Let me ask" />
-          <div>
+    <div className='mb-4'>
+      <header className='p-6 border-b border-white-border'>
+        <div className='max-w-6xl mx-auto flex justify-between items-center'>
+          <img
+            src={logoImg}
+            alt="Let me ask"
+            className='max-h-11'
+          />
+          <div className='flex gap-4'>
             <RoomCode code={roomId} />
             <Button isOutlined onClick={handleEndRoom}>Close Room</Button>
           </div>
         </div>
       </header>
 
-      <main>
-        <div className="room-title">
-          <h1>Room {title}</h1>
-          {questions.length > 0 && <span>{questions.length} question(s)</span>}
+      <main className='max-w-3xl mx-auto'>
+        <div className='mt-8 mb-6 flex items-center'>
+          <h1 className='font-poppins text-2xl text-black'>Room {title}</h1>
+          {questions.length > 0 &&
+            <span className='ml-4 bg-pink rounded-full py-2 px-4 text-white font-medium text-sm'>
+              {questions.length} question(s)
+            </span>}
         </div>
-        <div className="question-list">
+        <div className="mt-8 flex flex-col gap-4">
           {questions.map(question => {
             return (
               <Question

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply bg-white-background text-black
+  }
+
+  body,input, button, textarea {
+    @apply font-roboto
+  }
+}

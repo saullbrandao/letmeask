@@ -31,6 +31,8 @@ export function useRoom(roomId: string) {
   const [questions, setQuestions] = useState<QuestionType[]>([])
   const [title, setTitle] = useState('')
 
+  //TODO: order by number of likes
+
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`)
 

@@ -7,8 +7,6 @@ import { Button } from '../components/Button'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
 
-import '../styles/auth.scss'
-
 export const NewRoom = () => {
   const { user } = useAuth()
   const history = useHistory()
@@ -29,29 +27,45 @@ export const NewRoom = () => {
   }
 
   return (
-    <div id="page-auth">
-      <aside>
-        <img src={illustrationImg} alt="Illustration symboling questions and answers" />
-        <strong>Create live Q&amp;A rooms</strong>
-        <p>Answer question from your audience in real time</p>
+    <div className='flex items-stretch h-screen'>
+      <aside className='w-5/12 bg-purple text-white flex flex-col justify-center px-20 py-32'>
+        <img
+          src={illustrationImg}
+          alt="Illustration symboling questions and answers"
+          className='max-w-xs'
+        />
+        <strong className='font-poppins text-4xl font-bold mt-4'>
+          Create live Q&amp;A rooms
+        </strong>
+        <p className='text-2xl mt-4 text-white-background'>
+          Answer question from your audience in real time
+        </p>
       </aside>
-      <main>
-        <div className="main-content">
-          <img src={logoImg} alt="Let me ask" />
-          <h1>{user?.name}</h1>
-          <h2>Create a new room</h2>
-          <form onSubmit={handleCreateRoom}>
+      <main className='w-7/12 px-8 flex items-center justify-center '>
+        <div className="flex flex-col w-full max-w-xs items-stretch text-center">
+          <img
+            src={logoImg}
+            alt="Let me ask"
+            className='self-center'
+          />
+          <h2 className='text-2xl mt-16 mb-8 font-poppins'>
+            Create a new room
+          </h2>
+          <form onSubmit={handleCreateRoom} className='flex flex-col gap-4'>
             <input
               type="text"
               placeholder="Room's name"
               onChange={event => setNewRoom(event.target.value)}
               value={newRoom}
+              className='h-12 w-full rounded-lg px-4 bg-white border border-gray'
             />
             <Button type="submit">
               Create room
             </Button>
           </form>
-          <p>Wanna enter a existing room? <Link to='/'>Click here</Link></p>
+          <p className='text-sm mt-4 text-gray-dark'>
+            Wanna enter a existing room? <Link className='text-pink' to='/'>Click here</Link>
+          </p>
         </div>
       </main>
     </div>
