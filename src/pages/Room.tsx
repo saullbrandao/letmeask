@@ -55,7 +55,7 @@ export const Room = () => {
   }
 
   return (
-    <div className='mb-4'>
+    <div className='pb-4'>
       <header className='p-6 border-b border-white-border'>
         <div className='max-w-6xl mx-auto flex justify-between items-center '>
           <img
