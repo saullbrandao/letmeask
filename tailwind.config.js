@@ -39,6 +39,9 @@ module.exports = {
       'roboto': 'Roboto, sans-serif',
       'poppins': 'Poppins, sans-serif',
     },
+    minHeight: {
+      'textarea': '133px'
+    }
   },
   variants: {
     extend: {

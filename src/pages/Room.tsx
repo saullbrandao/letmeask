@@ -82,7 +82,7 @@ export const Room = () => {
             placeholder='What you wanna ask?'
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
-            className='w-full border-0 p-4 rounded-lg bg-white-details shadow resize-y h-32 '
+            className='w-full border-0 p-4 rounded-lg bg-white-details shadow resize-y h-32 min-h-textarea '
           />
           <div className='flex justify-between items-center mt-4'>
             {user ? (
