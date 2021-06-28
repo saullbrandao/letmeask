@@ -31,8 +31,6 @@ export function useRoom(roomId: string) {
   const [questions, setQuestions] = useState<QuestionType[]>([])
   const [title, setTitle] = useState('')
 
-  //TODO: order by number of likes
-
   useEffect(() => {
     const roomRef = database.ref(`rooms/${roomId}`)
 
@@ -49,6 +47,15 @@ export function useRoom(roomId: string) {
           likeCount: Object.values(value.likes ?? {}).length,
           likeId: Object.entries(value.likes ?? {}).find(([key, like]) => like.authorId === user?.id)?.[0],
         }
+      })
+
+      parsedQuestions.sort((firstEl, secondEl) => {
+        if (firstEl.isAnswered && !secondEl.isAnswered) return 1
+        if (!firstEl.isAnswered && secondEl.isAnswered) return -1
+        if (firstEl.isHighlighted && !secondEl.isHighlighted) return -1
+        if (!firstEl.isHighlighted && secondEl.isHighlighted) return 1
+
+        return secondEl.likeCount - firstEl.likeCount
       })
 
       setTitle(databaseRoom.title)
