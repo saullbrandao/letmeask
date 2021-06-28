@@ -1,8 +1,7 @@
 import { useState, FormEvent } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import illustrationImg from '../assets/images/illustration.svg'
-import logoImg from '../assets/images/logo.svg'
-
+import { Logo } from '../components/Logo'
 import { Button } from '../components/Button'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
@@ -27,7 +26,7 @@ export const NewRoom = () => {
   }
 
   return (
-    <div className='flex items-stretch h-screen'>
+    <div className='flex items-stretch h-screen dark:bg-shadow'>
       <aside className='hidden w-5/12 bg-purple text-white sm:flex flex-col justify-center px-20 py-32'>
         <img
           src={illustrationImg}
@@ -43,12 +42,8 @@ export const NewRoom = () => {
       </aside>
       <main className='w-full sm:w-7/12 px-8 flex items-center justify-center '>
         <div className="flex flex-col w-full max-w-xs items-stretch text-center">
-          <img
-            src={logoImg}
-            alt="Let me ask"
-            className='self-center'
-          />
-          <h2 className='text-2xl mt-16 mb-8 font-poppins'>
+          <Logo />
+          <h2 className='text-2xl mt-16 mb-8 font-poppins dark:text-white'>
             Create a new room
           </h2>
           <form onSubmit={handleCreateRoom} className='flex flex-col gap-4'>
@@ -63,7 +58,7 @@ export const NewRoom = () => {
               Create room
             </Button>
           </form>
-          <p className='text-sm mt-4 text-gray-dark'>
+          <p className='text-sm mt-4 text-gray-dark dark:text-gray-light'>
             Wanna enter a existing room? <Link className='text-pink' to='/'>Click here</Link>
           </p>
         </div>

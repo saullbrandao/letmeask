@@ -1,11 +1,11 @@
 import { FormEvent, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { Button } from '../components/Button'
+import { Logo } from '../components/Logo'
 import { useAuth } from '../hooks/useAuth'
 import { database } from '../services/firebase'
 
 import illustrationImg from '../assets/images/illustration.svg'
-import logoImg from '../assets/images/logo.svg'
 import googleIconImg from '../assets/images/google-icon.svg'
 
 export const Home = () => {
@@ -42,7 +42,7 @@ export const Home = () => {
   }
 
   return (
-    <div className='flex items-stretch h-screen'>
+    <div className='flex items-stretch h-screen dark:bg-shadow'>
       <aside className='hidden w-2/5 bg-purple text-white sm:flex flex-col justify-center px-20 py-32'>
         <img
           src={illustrationImg}
@@ -58,11 +58,7 @@ export const Home = () => {
       </aside>
       <main className='w-full sm:w-3/5 px-8 flex justify-center items-center'>
         <div className='flex flex-col w-full max-w-xs items-stretch text-center'>
-          <img
-            src={logoImg}
-            alt="Let me ask"
-            className='self-center'
-          />
+          <Logo />
           <button
             onClick={handleCreateRoom}
             className='mt-16 h-12 rounded-lg font-medium bg-red text-white flex justify-center items-center cursor-pointer border-0 transition hover:filter hover:brightness-90 '
@@ -87,7 +83,7 @@ export const Home = () => {
               type="text"
               placeholder="Type the room's code"
               onChange={event => setRoomCode(event.target.value)}
-              className='h-12 w-full rounded-lg px-4 bg-white border border-gray'
+              className='h-12 w-full rounded-lg px-4 bg-white dark:bg-shadow border border-gray'
             />
             <Button
               type="submit"

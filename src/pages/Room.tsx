@@ -2,10 +2,10 @@ import { useParams } from 'react-router-dom'
 import { Button } from '../components/Button'
 import { Question } from '../components/Question'
 import { RoomCode } from '../components/RoomCode'
+import { Logo } from '../components/Logo'
 import { FormEvent, useState } from 'react'
 import { database } from '../services/firebase'
 import { useAuth } from '../hooks/useAuth'
-import logoImg from '../assets/images/logo.svg'
 
 import { useRoom } from '../hooks/useRoom'
 
@@ -55,22 +55,18 @@ export const Room = () => {
   }
 
   return (
-    <div className='pb-4'>
-      <header className='p-6 border-b border-white-border'>
+    <div className='pb-4 dark:bg-shadow min-h-screen'>
+      <header className='p-6 border-b border-white-border dark:border-gray-dark'>
         <div className='max-w-6xl sm:mx-auto flex justify-between items-center '>
-          <img
-            src={logoImg}
-            alt="Let me ask"
-            className='max-h-11'
-          />
+          <Logo header />
           <RoomCode code={roomId} />
         </div>
       </header>
 
       <main className='max-w-3xl mx-auto'>
         <div className='mt-8 mb-6 flex flex-col gap-4 md:gap-0 md:flex-row items-center'>
-          <h1 className='font-poppins text-center sm:text-left text-2xl text-black'>
-            {title}'s Room
+          <h1 className='font-poppins text-center sm:text-left text-2xl text-black dark:text-white'>
+            {title}'s room
           </h1>
           {questions.length > 0 &&
             <span className='ml-4 bg-pink rounded-full py-2 px-4 text-white font-medium text-sm'>
@@ -82,7 +78,7 @@ export const Room = () => {
             placeholder='What you wanna ask?'
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
-            className='w-full border-0 p-4 rounded-lg bg-white-details shadow resize-y h-16 sm:h-32 min-h-sm sm:min-h-normal '
+            className='w-full border-0 p-4 sm:rounded-lg bg-white-details dark:bg-black shadow resize-y h-16 sm:h-32 min-h-sm sm:min-h-normal '
           />
           <div className='flex justify-between items-center mt-4 px-6 sm:px-0'>
             {user ? (
@@ -92,7 +88,7 @@ export const Room = () => {
                   alt={user.name}
                   className='w-8 h-8 rounded-full'
                 />
-                <span className='ml-2 text-black font-medium text-sm' >
+                <span className='ml-2 text-black font-medium text-sm dark:text-white' >
                   {user.name}
                 </span>
               </div>
@@ -105,7 +101,7 @@ export const Room = () => {
             <Button type='submit' disabled={!user}>Send question</Button>
           </div>
         </form>
-        <div className='mt-8 flex flex-col gap-4'>
+        <div className='mt-8 flex flex-col gap-1 sm:gap-2'>
           {questions.map(question => {
             return (
               <Question

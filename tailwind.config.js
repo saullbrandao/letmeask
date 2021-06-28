@@ -4,7 +4,7 @@ module.exports = {
     './src/**/*.{js,jsx,ts,tsx}',
     './public/index.html'
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
     boxShadow: {
       DEFAULT: '0 2px 12px 0 rgba(0,0,0,0.04)',
@@ -18,6 +18,7 @@ module.exports = {
       danger: '#e73f5d',
       shadow: '#050206',
       gray: {
+        darker: '#404047',
         dark: '#737380',
         DEFAULT: '#a8a8b3',
         light: '#dbdcdd',
@@ -39,14 +40,13 @@ module.exports = {
       'roboto': 'Roboto, sans-serif',
       'poppins': 'Poppins, sans-serif',
     },
-    minHeight: {
-      normal: '133px',
-      sm: '80px',
-    }
   },
   variants: {
     extend: {
-
+      minHeight: {
+        normal: '133px',
+        sm: '80px',
+      }
     },
   },
   plugins: [],

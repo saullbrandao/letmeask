@@ -19,8 +19,8 @@ export function Question({
   children,
 }: QuestionProps) {
   return (
-    <div className={`bg-white rounded-lg shadow p-6 ${isAnswered ? 'bg-gray-light' : ''} ${(isHighlighted && !isAnswered) ? 'border border-purple bg-white-details' : ''}`}>
-      <p className='text-black'>{content}</p>
+    <div className={`bg-white dark:bg-gray-darker sm:rounded-lg shadow p-6 ${isAnswered ? 'bg-gray-light dark:bg-black' : ''} ${(isHighlighted && !isAnswered) ? 'border border-purple bg-white-details' : ''}`}>
+      <p className='text-black dark:text-white'>{content}</p>
       <footer className='flex justify-between items-center mt-6'>
         <div className="flex items-center">
           <img
@@ -28,7 +28,7 @@ export function Question({
             alt={author.name}
             className='h-8 rounded-full '
           />
-          <span className={`ml-2 text-gray-dark text-sm ${isHighlighted ? 'text-black' : ''} `}>
+          <span className={`ml-2 text-gray-dark dark:text-gray text-sm ${isHighlighted ? 'text-black dark:text-white' : ''} `}>
             {author.name}
           </span>
         </div>

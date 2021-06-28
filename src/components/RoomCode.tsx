@@ -12,7 +12,7 @@ export function RoomCode({ code }: RoomCodeProps) {
   return (
     <button
       onClick={copyRoomCodeToClipboard}
-      className='h-10 rounded-lg overflow-hidden bg-white border border-purple cursor-pointer flex'
+      className='h-10 rounded-lg overflow-hidden bg-white dark:bg-shadow dark:text-white border border-purple cursor-pointer flex'
     >
       <div className='bg-purple h-full px-1 sm:px-2 flex justify-center items-center'>
         <img src={copyImg} alt="Copy room code" />
