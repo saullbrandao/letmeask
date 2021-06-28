@@ -28,7 +28,7 @@ export const NewRoom = () => {
 
   return (
     <div className='flex items-stretch h-screen'>
-      <aside className='w-5/12 bg-purple text-white flex flex-col justify-center px-20 py-32'>
+      <aside className='hidden w-5/12 bg-purple text-white sm:flex flex-col justify-center px-20 py-32'>
         <img
           src={illustrationImg}
           alt="Illustration symboling questions and answers"
@@ -41,7 +41,7 @@ export const NewRoom = () => {
           Answer question from your audience in real time
         </p>
       </aside>
-      <main className='w-7/12 px-8 flex items-center justify-center '>
+      <main className='w-full sm:w-7/12 px-8 flex items-center justify-center '>
         <div className="flex flex-col w-full max-w-xs items-stretch text-center">
           <img
             src={logoImg}

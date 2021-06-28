@@ -57,7 +57,7 @@ export const Room = () => {
   return (
     <div className='pb-4'>
       <header className='p-6 border-b border-white-border'>
-        <div className='max-w-6xl mx-auto flex justify-between items-center '>
+        <div className='max-w-6xl sm:mx-auto flex justify-between items-center '>
           <img
             src={logoImg}
             alt="Let me ask"
@@ -68,8 +68,8 @@ export const Room = () => {
       </header>
 
       <main className='max-w-3xl mx-auto'>
-        <div className='mt-8 mb-6 flex items-center'>
-          <h1 className='font-poppins text-2xl text-black'>
+        <div className='mt-8 mb-6 flex flex-col gap-4 md:gap-0 md:flex-row items-center'>
+          <h1 className='font-poppins text-center sm:text-left text-2xl text-black'>
             {title}'s Room
           </h1>
           {questions.length > 0 &&
@@ -82,9 +82,9 @@ export const Room = () => {
             placeholder='What you wanna ask?'
             onChange={event => setNewQuestion(event.target.value)}
             value={newQuestion}
-            className='w-full border-0 p-4 rounded-lg bg-white-details shadow resize-y h-32 min-h-textarea '
+            className='w-full border-0 p-4 rounded-lg bg-white-details shadow resize-y h-16 sm:h-32 min-h-sm sm:min-h-normal '
           />
-          <div className='flex justify-between items-center mt-4'>
+          <div className='flex justify-between items-center mt-4 px-6 sm:px-0'>
             {user ? (
               <div className='flex items-center'>
                 <img

@@ -43,7 +43,7 @@ export const Home = () => {
 
   return (
     <div className='flex items-stretch h-screen'>
-      <aside className='w-2/5 bg-purple text-white flex flex-col justify-center px-20 py-32'>
+      <aside className='hidden w-2/5 bg-purple text-white sm:flex flex-col justify-center px-20 py-32'>
         <img
           src={illustrationImg}
           alt="Ilustração simbolizando perguntas e respostas"
@@ -56,7 +56,7 @@ export const Home = () => {
           Answer question from your audience in real time
         </p>
       </aside>
-      <main className='w-3/5 px-8 flex justify-center items-center'>
+      <main className='w-full sm:w-3/5 px-8 flex justify-center items-center'>
         <div className='flex flex-col w-full max-w-xs items-stretch text-center'>
           <img
             src={logoImg}

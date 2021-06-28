@@ -58,8 +58,8 @@ export const AdminRoom = () => {
     <>
 
       <div className='min-h-screen pb-4' id='admin' >
-        <header className='p-6 border-b border-white-border'>
-          <div className='max-w-6xl mx-auto flex justify-between items-center'>
+        <header className='py-6 px-2 border-b border-white-border'>
+          <div className='max-w-6xl sm:mx-auto flex justify-between items-center gap-4'>
             <img
               src={logoImg}
               alt="Let me ask"
@@ -79,7 +79,7 @@ export const AdminRoom = () => {
           shouldReturnFocusAfterClose={false}
           bodyOpenClassName='overflow-hidden'
           overlayClassName='fixed left-0 top-0 flex w-full h-full  justify-center items-center bg-shadow bg-opacity-75'
-          className='flex flex-col gap-4 left h-80 w-2/5 rounded-lg bg-white-background bg-opacity- justify-center items-center'
+          className='flex flex-col gap-4 h-80 w-full md:w-3/5 lg:w-2/5 rounded-lg bg-white-background bg-opacity- justify-center items-center'
         >
           <svg className='w-12 h-12 stroke-current text-danger' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 5.99988H5H21" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -105,8 +105,8 @@ export const AdminRoom = () => {
 
 
         <main className='max-w-3xl mx-auto'>
-          <div className='mt-8 mb-6 flex items-center'>
-            <h1 className='font-poppins text-2xl text-black'>Room {title}</h1>
+          <div className='mt-8 mb-6 flex flex-col gap-4 md:gap-0 md:flex-row items-center'>
+            <h1 className='font-poppins text-center sm:text-left text-2xl text-black'>Room {title}</h1>
             {questions.length > 0 &&
               <span className='ml-4 bg-pink rounded-full py-2 px-4 text-white font-medium text-sm'>
                 {questions.length} question(s)

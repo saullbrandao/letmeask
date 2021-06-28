@@ -40,7 +40,8 @@ module.exports = {
       'poppins': 'Poppins, sans-serif',
     },
     minHeight: {
-      'textarea': '133px'
+      normal: '133px',
+      sm: '80px',
     }
   },
   variants: {
