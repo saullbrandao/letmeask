@@ -83,7 +83,7 @@ export const Home = () => {
               type="text"
               placeholder="Type the room's code"
               onChange={event => setRoomCode(event.target.value)}
-              className='h-12 w-full rounded-lg px-4 bg-white dark:bg-shadow border border-gray'
+              className='h-12 w-full rounded-lg px-4 bg-white dark:bg-shadow dark:text-white border border-gray'
             />
             <Button
               type="submit"

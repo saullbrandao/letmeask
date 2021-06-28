@@ -52,7 +52,7 @@ export const NewRoom = () => {
               placeholder="Room's name"
               onChange={event => setNewRoom(event.target.value)}
               value={newRoom}
-              className='h-12 w-full rounded-lg px-4 bg-white border border-gray'
+              className='h-12 w-full rounded-lg px-4 bg-white dark:bg-black dark:text-white border border-gray'
             />
             <Button type="submit">
               Create room
