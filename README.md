@@ -51,9 +51,11 @@
 ![letmeask](https://raw.githubusercontent.com/saullbrandao/letmeask/main/src/assets/images/demo.png)
 
 * You can create or join a Q&A room
-* Login with google account provided by Firebase Auth
-* There is a light and dark mode
-* Clicking on a card will open a new page which display the user's stats
+* Login with google account using Firebase Auth
+* Respects your system preferred color scheme(light or dark)
+* The room creator can highlight, delete and mark a question as answered
+* Users can give likes to questions
+* Questions with more likes appear first
 
 ### Built With
 
