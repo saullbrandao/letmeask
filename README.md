@@ -1,132 +1,106 @@
-[![MIT License][license-shield]][license-url]
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/saullbrandao/letmeask">
-    <img src="src/assets/images/logo.svg" alt="Logo" width="200" height="80">
+  <a href="https://github.com/saullbrandao/letmeask/">
+    <img src="src/assets/images/logo.svg" alt="Logo" width="335" height="80">
   </a>
 
-  <h2 align="center" style="font-weight: 700">Let Me Ask</h2>
+  <p align="center">
+    <a href="https://www.twitter.com/saullbrandao/">
+      <img alt="Saull Brandão" src="https://img.shields.io/badge/-saullbrandao-1DA1F2?style=flat&logo=Twitter&logoColor=white" />
+    </a>
+    <a href="https://www.linkedin.com/in/saullbrandao/">
+      <img alt="Saull Brandão" src="https://img.shields.io/badge/-saullbrandao-0A66C2?style=flat&logo=Linkedin&logoColor=white" />
+    </a>
+    <a href="./LICENSE">
+      <img alt="License MIT" src="https://img.shields.io/github/license/saullbrandao/letmeask" />
+    </a>
+    <a href="https://github.com/saullbrandao/letmeask/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/saullbrandao/letmeask" />
+    </a>
+  </p>
+  <h2 align="center">Letmeask</h2>
 
   <p align="center">
     Create live Q&A rooms
     <br />
-    <br />
-    <a href="https://letmeask-saullbrandao.vercel.app/">View Demo</a>
-    ·
-    <a href="https://github.com/saullbrandao/letmeask/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/saullbrandao/letmeask/issues">Request Feature</a>
-  </p>
+    </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ol>
-</details>
+# :bookmark_tabs: Table of Contents
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+- [About the project](#about-the-project)
+- [Technologies](#technologies)
+- [Getting started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Issues](#issues)
+- [Contributing](#contributing)
+- [License](#license)
+
+# :page_with_curl: About the Project
 
 ![letmeask](https://raw.githubusercontent.com/saullbrandao/letmeask/main/src/assets/images/demo.png)
 
-* You can create or join a Q&A room
-* Login with google account using Firebase Auth
-* Respects your system preferred color scheme(light or dark)
-* The room creator can highlight, delete and mark a question as answered
-* Users can give likes to questions
-* Questions with more likes appear first
+- You can create or join a Q&A room
+- Login with google account using Firebase Auth
+- Respects your system preferred color scheme(light or dark)
+- The room creator can highlight, delete and mark a question as answered
+- Users can give likes to questions
+- Questions with more likes appear first
 
-### Built With
+# :computer: Technologies
 
-* [React](https://github.com/facebook/react)
-* [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss/)
-* [Typescript](https://github.com/microsoft/TypeScript)
-* [React Modal](https://github.com/reactjs/react-modal)
-* [React Router Dom](https://github.com/ReactTraining/react-router)
-* [Firebase](https://firebase.google.com/)
+- [React](https://github.com/facebook/react)
+- [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss/)
+- [Typescript](https://github.com/microsoft/TypeScript)
+- [React Modal](https://github.com/reactjs/react-modal)
+- [React Router Dom](https://github.com/ReactTraining/react-router)
+- [Firebase](https://firebase.google.com/)
 
-<!-- GETTING STARTED -->
-## Getting Started
+# :rocket: Getting Started
 
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
+## Prerequisites
 
 You will need to install Node.js and yarn
-* [Node.js](https://nodejs.org/en/download/)
-* yarn
-  ```sh
-  npm install -g yarn
-  ```
 
-### Installation
+- [Node.js](https://nodejs.org/en/download/)
+- [Yarn](https://classic.yarnpkg.com/en/docs/install)
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/saullbrandao/letmeask.git
-   ```
-2. Install packages
-   ```sh
-   yarn
-   ```
-3. You have to create a [firebase](https://console.firebase.google.com/) project and activate the option to login using google account(Firebase Auth) and the Firebase Realtime Database. Refer to the [firebase docs](https://firebase.google.com/docs) for more information
-4. Create a `.env.local` file at the root of the project and cop
-  
-    * Change everything inside quotes with the config you got from your firebase project([example](https://firebase.google.com/docs/web/setup?authuser=0#config-object))
+## Installation
 
-      ```sh
-      REACT_APP_API_KEY='API_KEY'
-      REACT_APP_AUTH_DOMAIN='AUTH_DOMAIN'
-      REACT_APP_DATABASE_URL='DATABASE_URL'
-      REACT_APP_PROJECT_ID='PROJECT_ID'
-      REACT_APP_STORAGE_BUCKET='STORAGE_BUCKET'
-      REACT_APP_MESSAGING_SENDER_ID='MESSAGING_SENDER_ID'
-      REACT_APP_APP_ID='APP_ID'
-      ```
-<!-- USAGE EXAMPLES -->
-## Usage
+```sh
+# Clone Repository
+$ git clone https://github.com/saullbrandao/letmeask.git && cd letmeask
 
-1. Run the project
-    ```sh
-    yarn start
-    ```
-2. This starts the development server on http://localhost:3000
+# Install Dependencies
+$ yarn
 
-<!-- LICENSE -->
-## License
+# You have to create a [firebase](https://console.firebase.google.com/) project and activate the option to login using google account(Firebase Auth) and the Firebase Realtime Database. Refer to the [firebase docs](https://firebase.google.com/docs) for more information
 
-Distributed under the MIT License. See `LICENSE` for more information.
+# Fill .env.local file with YOUR environment variables, according to .env.example file.
 
-<!-- CONTACT -->
-## Contact
+# Run Application
+$ yarn start
+```
 
-Saull Brandão - [@saullbrandao](https://twitter.com/saullbrandao) - saull@outlook.com
+This starts the development server on http://localhost:3000/
 
-Project Link: [https://github.com/saullbrandao/letmeask](https://github.com/saullbrandao/letmeask)
+# :interrobang: Issues
 
+Create a <a href="https://github.com/saullbrandao/letmeask/issues">new issue
+report</a>, it will be an honor to be able to help you solve and further improve
+our application.
 
-[issues-shield]: https://img.shields.io/github/issues/saullbrandao/letmeask.svg?style=for-the-badge
-[issues-url]: https://github.com/saullbrandao/letmeask/issues
-[license-shield]: https://img.shields.io/github/license/saullbrandao/letmeask.svg?style=for-the-badge
-[license-url]: https://github.com/saullbrandao/letmeask/blob/main/LICENSE
+# :mailbox: Contributing
+
+- Fork this repository;
+- Create a new branch to develop your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m 'feat: my new feature'`;
+- Push to your branch: `git push origin my-feature`.
+- Open a Pull Request
+
+# :lock: License
+
+Distributed under the MIT License. See [LICENSE](./LICENSE) for more
+information. Made by [Saull Brandão](https://www.linkedin.com/in/saullbrandao/).
